@@ -9,10 +9,10 @@ include(ExternalProject)
 file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/include)
 
 ExternalProject_Add(dbow2_src
-  GIT_REPOSITORY git@github.com:dorian3d/DBoW2.git
+  GIT_REPOSITORY git@github.com:zhangzichao/DBoW2.git
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CATKIN_DEVEL_PREFIX}
-  BUILD_COMMAND CXXFLAGS=-i${CATKIN_DEVEL_PREFIX}/include make
-  INSTALL_COMMAND make install
+  BUILD_COMMAND ${CMAKE_COMMAND} --build ./ --target install
+  INSTALL_COMMAND ""
 )
 ExternalProject_CatkinInstall(dbow2_src)
 
